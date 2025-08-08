@@ -10,7 +10,6 @@ import { IssueCommentComponent } from '../../components/issue-comment/issue-comm
   imports: [RouterLink, IssueCommentComponent],
   templateUrl: './issue-page.component.html',
   styleUrl: './issue-page.component.css',
-  providers: [IssueService]
 })
 export default class IssuePageComponent {
   private route = inject(ActivatedRoute);
@@ -23,6 +22,6 @@ export default class IssuePageComponent {
     )
   )
 
-  issueQuery = this.issueService.issuesQuery;
-  issueCommentsQuery = this.issueService.issuesCommentsQuery;
+  issueQuery = this.issueService.issueQuery;
+  issueCommentsQuery = this.issueService.issueCommentsQuery;
 }
