@@ -9,12 +9,17 @@ const BASE_URL = environment.baseUrl;
 const TOKEN = environment.gitHubToken;
 
 export const getIssues = async (
-  state: StateIssue = StateIssue.All
+  state: StateIssue = StateIssue.All,
+  selectedLabels: Array<string>
 ): Promise<IGitHubIssue[]> => {
   await sleep(1500);
 
   const params = new URLSearchParams();
   params.append('state', state);
+
+  if(selectedLabels.length) {
+    params.append('labels', selectedLabels.join(','));
+  }
 
   try {
     const resp = await fetch(`${BASE_URL}/issues?${params}`, {
