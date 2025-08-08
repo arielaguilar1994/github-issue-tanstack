@@ -2,7 +2,7 @@ import { IGitHubLabel } from "./github-labels.interface"
 
 export enum StateIssue {
   Open = 'open',
-  Close = 'close',
+  Close = 'closed',
   All = 'all'
 }
 
